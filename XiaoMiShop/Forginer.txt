@@ -1,0 +1,35 @@
+CREATE TABLE `users` (
+  `uid` int(11) NOT NULL AUTO_INCREMENT,
+  `uname` varchar(11) DEFAULT NULL,
+  `upwd` varchar(11) DEFAULT NULL,
+  PRIMARY KEY (`uid`)
+) ENGINE=InnoDB AUTO_INCREMENT=4 DEFAULT CHARSET=utf8
+
+CREATE TABLE `type` (
+  `typeID` int(11) NOT NULL AUTO_INCREMENT,
+  `typename` varchar(255) NOT NULL,
+  PRIMARY KEY (`typeID`)
+) ENGINE=InnoDB AUTO_INCREMENT=8 DEFAULT CHARSET=utf8
+
+CREATE TABLE `product` (
+  `productID` int(11) NOT NULL AUTO_INCREMENT,
+  `productname` varchar(255) NOT NULL,
+  `price` decimal(10,2) NOT NULL,
+  `discribe` varchar(255) NOT NULL,
+  `image` varchar(255) NOT NULL,
+  `typeID` int(11) NOT NULL,
+  `discribe2` varchar(255) NOT NULL,
+  `color` varchar(255) NOT NULL,
+  `num` int(11) NOT NULL,
+  `edition` varchar(50) NOT NULL,
+  PRIMARY KEY (`productID`)
+) ENGINE=InnoDB AUTO_INCREMENT=71 DEFAULT CHARSET=utf8
+
+CREATE TABLE `cart` (
+  `cartID` int(11) NOT NULL AUTO_INCREMENT,
+  `cartname` varchar(255) NOT NULL,
+  `cartprice` decimal(10,2) DEFAULT NULL,
+  `productID` int(11) DEFAULT NULL,
+  `uname` varchar(11) NOT NULL,
+  PRIMARY KEY (`cartID`)
+) ENGINE=InnoDB AUTO_INCREMENT=157 DEFAULT CHARSET=utf8
